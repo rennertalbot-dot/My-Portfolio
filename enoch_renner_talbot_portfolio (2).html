@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enoch Renner Talbot — Associate Product Manager Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#090d16',
+                        darker: '#030712',
+                        accent: '#0d9488', /* crisp pine green/teal */
+                        accentHover: '#14b8a6',
+                        surface: '#131c2e',
+                        surfaceBorder: 'rgba(255, 255, 255, 0.08)',
+                        textMain: '#f8fafc',
+                        textMuted: '#94a3b8',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #030712;
+            color: #f8fafc;
+        }
+        
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #030712;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0d9488;
+        }
+
+        .glass {
+            background: rgba(19, 28, 46, 0.75);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-accent selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300" id="navbar">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-xl font-bold tracking-tight hover:text-accent transition-colors flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-accent inline-block"></span>
+                        ERT.
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#about" class="text-sm font-medium text-textMuted hover:text-textMain transition-colors">About</a>
+                        <a href="#toolkit" class="text-sm font-medium text-textMuted hover:text-textMain transition-colors">PM Toolkit</a>
+                        <a href="#projects" class="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Projects</a>
+                        <a href="#experience" class="text-sm font-medium text-textMuted hover:text-textMain transition-colors">Experience</a>
+                        <a href="#contact" class="px-4 py-2 rounded-lg text-sm font-semibold bg-accent/10 text-accent border border-accent/30 hover:bg-accent hover:text-white transition-all">Get in Touch</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-textMuted hover:text-textMain focus:outline-none p-2" aria-label="Toggle Navigation">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10">
+            <div class="px-3 pt-3 pb-4 space-y-2">
+                <a href="#about" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-textMuted hover:text-textMain hover:bg-surface">About</a>
+                <a href="#toolkit" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-textMuted hover:text-textMain hover:bg-surface">PM Toolkit</a>
+                <a href="#projects" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-textMuted hover:text-textMain hover:bg-surface">Projects</a>
+                <a href="#experience" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-textMuted hover:text-textMain hover:bg-surface">Experience</a>
+                <a href="#contact" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-accent hover:bg-accent/10">Get in Touch</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center pt-20 relative overflow-hidden">
+        <!-- Background Ambient Glow -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent/15 rounded-full blur-[140px] -z-10 pointer-events-none"></div>
+        <div class="absolute bottom-1/3 right-1/4 w-80 h-80 bg-blue-600/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10 py-12">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent text-xs font-semibold tracking-wide uppercase mb-6">
+                    <span class="w-2 h-2 rounded-full bg-accent animate-pulse"></span>
+                    Available for Remote APM & Product Roles
+                </div>
+
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-[1.1]">
+                    Enoch Renner Talbot
+                    <span class="block text-textMuted font-medium text-2xl sm:text-4xl mt-3">
+                        Associate Product Manager & Interactive Prototype Developer
+                    </span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-textMuted mb-8 font-light leading-relaxed max-w-2xl">
+                    Independent Product Manager & Prototype Developer balancing structured event operations logistics with hands-on full-stack product building.
+                </p>
+
+                <div class="p-4 rounded-xl bg-surface/60 border border-surfaceBorder mb-10 max-w-2xl text-sm text-textMuted leading-relaxed">
+                    <span class="text-textMain font-medium">Current Roles:</span> Executive Assistant to the CEO at <span class="text-textMain font-medium">NumoPositive Events</span> (2023–Present) | Product Manager at <span class="text-textMain font-medium">TS Academy</span> (2025–2026) | History & International Studies Student at <span class="text-textMain font-medium">Delta State University</span> (2021–Present).
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#projects" class="inline-flex justify-center items-center px-6 py-3.5 rounded-lg text-sm font-semibold text-white bg-accent hover:bg-accentHover transition-colors duration-200 shadow-lg shadow-accent/20">
+                        Explore Case Studies
+                        <i class="fas fa-arrow-down ml-2 text-xs"></i>
+                    </a>
+                    <a href="#contact" class="inline-flex justify-center items-center px-6 py-3.5 rounded-lg text-sm font-semibold text-textMain bg-surface hover:bg-surface/80 border border-surfaceBorder transition-colors duration-200">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-dark relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal">
+                <div class="flex items-center gap-4 mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">About & Product Philosophy</h2>
+                    <div class="h-px bg-surfaceBorder flex-grow max-w-xs"></div>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                    <div class="lg:col-span-7 space-y-6 text-textMuted leading-relaxed text-base font-light">
+                        <p class="text-textMain text-lg font-normal">
+                            I specialize in taking products from zero-to-one by combining analytical product strategy with rapid, full-stack prototype development.
+                        </p>
+                        <p>
+                            Managing operations for large-scale physical events taught me a fundamental product lesson: <strong class="text-textMain font-medium">execution is everything</strong>. Edge cases are not theoretical—they happen in real-time under high operational pressure. I apply this operational discipline directly to digital products.
+                        </p>
+                        <p>
+                            Instead of delivering static wireframes, I build <strong class="text-textMain font-medium">full-stack interactive prototypes</strong> that replicate authentic user flows. My background in History & International Studies gives me an added analytical edge—enabling deep context gathering, clear user empathy, and structured research synthesis.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-5 bg-surface rounded-2xl p-6 border border-surfaceBorder shadow-xl space-y-4">
+                        <h3 class="text-lg font-semibold text-textMain border-b border-surfaceBorder pb-3">Core APM Competencies</h3>
+                        <div class="space-y-3">
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-accent mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="text-sm font-medium text-textMain">PRD & Spec Writing</h4>
+                                    <p class="text-xs text-textMuted">Translating ambiguous user problems into clear, actionable engineering specs.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-accent mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="text-sm font-medium text-textMain">Prioritization & Strategy</h4>
+                                    <p class="text-xs text-textMuted">Evaluating trade-offs using RICE, MoSCoW, and impact-effort matrices.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-accent mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="text-sm font-medium text-textMain">Interactive Prototyping</h4>
+                                    <p class="text-xs text-textMuted">Shipping functional web MVPs to test hypotheses with live users quickly.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i class="fas fa-check-circle text-accent mt-1 text-sm"></i>
+                                <div>
+                                    <h4 class="text-sm font-medium text-textMain">Cross-Functional Leadership</h4>
+                                    <p class="text-xs text-textMuted">Aligning operational teams, vendors, and stakeholders around clear deliverables.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Toolkit Section -->
+    <section id="toolkit" class="py-24 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal">
+                <div class="flex items-center gap-4 mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">PM Toolkit & Core Skillset</h2>
+                    <div class="h-px bg-surfaceBorder flex-grow max-w-xs"></div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Product Management -->
+                    <div class="bg-surface/70 rounded-xl p-6 border border-surfaceBorder hover:border-accent/40 transition-colors">
+                        <div class="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-4">
+                            <i class="fas fa-layer-group text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-textMain mb-4">Product Management</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">PRD & User Story Writing</span>
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">Agile / Scrum Cycles</span>
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">RICE & MoSCoW Prioritization</span>
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">Product Analytics</span>
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">Funnel Optimization</span>
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">OKRs & North Star Metrics</span>
+                        </div>
+                    </div>
+
+                    <!-- Rapid Prototyping -->
+                    <div class="bg-surface/70 rounded-xl p-6 border border-surfaceBorder hover:border-accent/40 transition-colors">
+                        <div class="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-4">
+                            <i class="fas fa-code-branch text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-textMain mb-4">Rapid Prototyping & Tech</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">Full-Stack Interactive MVP Building</span>
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">Lovable & AI-Assisted Dev</span>
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">Google Stitch</span>
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">React Web Demos</span>
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">UX / Wireframing</span>
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">User Journey Mapping</span>
+                        </div>
+                    </div>
+
+                    <!-- Operations & Execution -->
+                    <div class="bg-surface/70 rounded-xl p-6 border border-surfaceBorder hover:border-accent/40 transition-colors">
+                        <div class="w-10 h-10 rounded-lg bg-accent/10 border border-accent/20 flex items-center justify-center text-accent mb-4">
+                            <i class="fas fa-tasks text-lg"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-textMain mb-4">Operations & Growth</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">Large-Scale Event Logistics</span>
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">Vendor Coordination</span>
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">Volunteer Management</span>
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">Executive Scheduling</span>
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">Go-To-Market Strategy</span>
+                            <span class="px-3 py-1 bg-darker rounded-md text-xs font-medium text-textMuted border border-white/5">Executive Deck Production</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 bg-dark relative">
+        <div class="absolute bottom-1/4 right-0 w-96 h-96 bg-accent/10 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal">
+                <div class="flex items-center gap-4 mb-4">
+                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Featured Case Studies</h2>
+                    <div class="h-px bg-surfaceBorder flex-grow max-w-xs"></div>
+                </div>
+                <p class="text-textMuted mb-12 max-w-xl text-sm">
+                    Interactive prototypes built to evaluate product-market fit, streamline user onboarding funnels, and validate user engagement hypotheses.
+                </p>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    
+                    <!-- Project 1: Cova -->
+                    <div class="group bg-surface rounded-2xl overflow-hidden border border-surfaceBorder hover:border-accent/50 transition-all duration-300 flex flex-col">
+                        <div class="h-56 bg-darker relative overflow-hidden flex items-center justify-center border-b border-surfaceBorder p-6">
+                            <div class="absolute inset-0 bg-gradient-to-br from-accent/20 via-surface to-darker opacity-60 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="relative z-10 text-center px-4 flex flex-col items-center">
+                                <!-- Cova Logo Card Container -->
+                                <div class="w-44 h-24 bg-white rounded-xl p-3 shadow-xl flex items-center justify-center mb-3 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                                    <img src="cova-logo.png" alt="Cova Logo" class="max-h-full max-w-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/220x90/0d9488/ffffff?text=Cova+Logo';">
+                                </div>
+                                <span class="text-xs font-mono uppercase tracking-widest text-accent font-semibold">Fintech & Micro-Insurance</span>
+                            </div>
+                        </div>
+
+                        <div class="p-6 sm:p-8 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="text-2xl font-bold text-textMain group-hover:text-accent transition-colors">Cova</h3>
+                                    <a href="https://covainsure.lovable.app" target="_blank" rel="noopener noreferrer" class="text-textMuted hover:text-accent transition-colors flex items-center gap-1.5 text-xs font-semibold">
+                                        <span>Live Demo</span>
+                                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                                    </a>
+                                </div>
+                                
+                                <p class="text-sm text-textMuted mb-6 leading-relaxed">
+                                    Micro-insurance platform engineered specifically for informal economy workers. Built as a functional interactive prototype focusing on low-friction policy acquisition and rapid claims submission.
+                                </p>
+
+                                <div class="space-y-4 mb-6">
+                                    <div>
+                                        <h4 class="text-xs font-semibold text-textMain uppercase tracking-wider mb-2">Product Architecture Highlights</h4>
+                                        <ul class="space-y-1.5 text-xs text-textMuted">
+                                            <li class="flex items-start gap-2"><i class="fas fa-check text-accent mt-0.5"></i> End-to-end design system replicated across multi-step flow screens.</li>
+                                            <li class="flex items-start gap-2"><i class="fas fa-check text-accent mt-0.5"></i> Reduced cognitive load for users unfamiliar with standard fintech UI patterns.</li>
+                                            <li class="flex items-start gap-2"><i class="fas fa-check text-accent mt-0.5"></i> Developed inside full-stack interactive prototyping environments.</li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Metrics & Growth Roadmap -->
+                                    <div class="p-4 rounded-xl bg-darker/60 border border-white/5">
+                                        <h4 class="text-xs font-semibold text-accent uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                                            <i class="fas fa-chart-line"></i> Metrics & Growth Roadmap
+                                        </h4>
+                                        <div class="grid grid-cols-2 gap-3 text-xs">
+                                            <div>
+                                                <span class="block text-textMuted text-[10px]">North Star Goal</span>
+                                                <span class="font-medium text-textMain">Claim Flow Completion</span>
+                                            </div>
+                                            <div>
+                                                <span class="block text-textMuted text-[10px]">Target Conversion</span>
+                                                <span class="font-medium text-textMain">&gt; 78% Funnel Pass-Through</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 border-t border-surfaceBorder flex items-center justify-between">
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="text-[11px] font-mono text-accent bg-accent/10 px-2 py-0.5 rounded">React</span>
+                                    <span class="text-[11px] font-mono text-accent bg-accent/10 px-2 py-0.5 rounded">Fintech</span>
+                                    <span class="text-[11px] font-mono text-accent bg-accent/10 px-2 py-0.5 rounded">Full-Stack Prototype</span>
+                                </div>
+                                <a href="https://covainsure.lovable.app" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-white bg-accent hover:bg-accentHover px-3 py-1.5 rounded-lg transition-colors inline-flex items-center gap-1.5">
+                                    Launch App <i class="fas fa-arrow-right text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project 2: Vetly -->
+                    <div class="group bg-surface rounded-2xl overflow-hidden border border-surfaceBorder hover:border-accent/50 transition-all duration-300 flex flex-col">
+                        <div class="h-56 bg-darker relative overflow-hidden flex items-center justify-center border-b border-surfaceBorder p-6">
+                            <div class="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-surface to-darker opacity-60 group-hover:opacity-100 transition-opacity"></div>
+                            <div class="relative z-10 text-center px-4 flex flex-col items-center">
+                                <!-- Vetly Logo Card Container -->
+                                <div class="w-44 h-24 bg-white rounded-xl p-3 shadow-xl flex items-center justify-center mb-3 border border-white/20 group-hover:scale-105 transition-transform duration-300">
+                                    <img src="vetly-logo.jpg" alt="Vetly Logo" class="max-h-full max-w-full object-contain" onerror="this.onerror=null; this.src='https://placehold.co/220x90/1e3a8a/ffffff?text=Vetly+Logo';">
+                                </div>
+                                <span class="text-xs font-mono uppercase tracking-widest text-accent font-semibold">EdTech & Student Workflow</span>
+                            </div>
+                        </div>
+
+                        <div class="p-6 sm:p-8 flex-grow flex flex-col justify-between">
+                            <div>
+                                <div class="flex justify-between items-start mb-3">
+                                    <h3 class="text-2xl font-bold text-textMain group-hover:text-accent transition-colors">Vetly</h3>
+                                    <a href="https://vetlyedu.lovable.app" target="_blank" rel="noopener noreferrer" class="text-textMuted hover:text-accent transition-colors flex items-center gap-1.5 text-xs font-semibold">
+                                        <span>Live Demo</span>
+                                        <i class="fas fa-external-link-alt text-[10px]"></i>
+                                    </a>
+                                </div>
+
+                                <p class="text-sm text-textMuted mb-6 leading-relaxed">
+                                    Department-aware screening and academic guidance app built for Delta State University (DELSU) students to navigate complex institutional clearance procedures.
+                                </p>
+
+                                <div class="space-y-4 mb-6">
+                                    <div>
+                                        <h4 class="text-xs font-semibold text-textMain uppercase tracking-wider mb-2">Product Architecture Highlights</h4>
+                                        <ul class="space-y-1.5 text-xs text-textMuted">
+                                            <li class="flex items-start gap-2"><i class="fas fa-check text-accent mt-0.5"></i> Full product suite: PRD, design system, and multi-persona user journey maps.</li>
+                                            <li class="flex items-start gap-2"><i class="fas fa-check text-accent mt-0.5"></i> Dynamic logic tree mapping requirements based on individual student departments.</li>
+                                            <li class="flex items-start gap-2"><i class="fas fa-check text-accent mt-0.5"></i> Engineered in full-stack interactive prototyping environments.</li>
+                                        </ul>
+                                    </div>
+
+                                    <!-- Metrics & Growth Roadmap -->
+                                    <div class="p-4 rounded-xl bg-darker/60 border border-white/5">
+                                        <h4 class="text-xs font-semibold text-accent uppercase tracking-wider mb-2 flex items-center gap-1.5">
+                                            <i class="fas fa-chart-line"></i> Metrics & Growth Roadmap
+                                        </h4>
+                                        <div class="grid grid-cols-2 gap-3 text-xs">
+                                            <div>
+                                                <span class="block text-textMuted text-[10px]">North Star Goal</span>
+                                                <span class="font-medium text-textMain">Eligibility Funnel Conversion</span>
+                                            </div>
+                                            <div>
+                                                <span class="block text-textMuted text-[10px]">Primary KPI</span>
+                                                <span class="font-medium text-textMain">&lt; 3 Min Time-to-Screen</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 border-t border-surfaceBorder flex items-center justify-between">
+                                <div class="flex flex-wrap gap-1.5">
+                                    <span class="text-[11px] font-mono text-accent bg-accent/10 px-2 py-0.5 rounded">EdTech</span>
+                                    <span class="text-[11px] font-mono text-accent bg-accent/10 px-2 py-0.5 rounded">Workflow Design</span>
+                                    <span class="text-[11px] font-mono text-accent bg-accent/10 px-2 py-0.5 rounded">Full-Stack Prototype</span>
+                                </div>
+                                <a href="https://vetlyedu.lovable.app" target="_blank" rel="noopener noreferrer" class="text-xs font-semibold text-white bg-accent hover:bg-accentHover px-3 py-1.5 rounded-lg transition-colors inline-flex items-center gap-1.5">
+                                    Launch App <i class="fas fa-arrow-right text-[10px]"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-24">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="reveal">
+                <div class="flex items-center gap-4 mb-16">
+                    <h2 class="text-2xl sm:text-3xl font-bold tracking-tight">Professional Track Record</h2>
+                    <div class="h-px bg-surfaceBorder flex-grow max-w-xs"></div>
+                </div>
+
+                <div class="space-y-10 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-surfaceBorder before:to-transparent">
+                    
+                    <!-- Experience 1: TS Academy -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-accent/40 bg-surface text-accent shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-rocket text-sm"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl border border-surfaceBorder bg-surface/50 hover:bg-surface transition-colors">
+                            <div class="flex flex-col mb-2">
+                                <h3 class="text-lg font-bold text-textMain">Junior Product Manager</h3>
+                                <div class="text-accent font-medium text-sm">TS Academy</div>
+                            </div>
+                            <div class="text-xs text-textMuted mb-4 font-mono">2025 — 2026</div>
+                            <ul class="text-xs text-textMuted space-y-2 font-light">
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">▶</span> Drive product roadmap planning, user stories creation, and backlog prioritization using MoSCoW and RICE frameworks.</li>
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">▶</span> Manage Agile/Scrum sprint ceremonies and cross-functional team execution.</li>
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">▶</span> Define feature OKRs and North Star KPIs to ensure product delivery aligns with business outcomes.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Experience 2: NumoPositive -->
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-surface text-accent shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-calendar-check text-sm"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl border border-surfaceBorder bg-surface/50 hover:bg-surface transition-colors">
+                            <div class="flex flex-col mb-2">
+                                <h3 class="text-lg font-bold text-textMain">Executive Assistant to the CEO</h3>
+                                <div class="text-accent font-medium text-sm flex items-center justify-between flex-wrap gap-1">
+                                    <span>NumoPositive Events</span>
+                                    <span class="text-textMuted text-xs"><i class="fas fa-map-marker-alt mr-1"></i>Yenagoa, Nigeria</span>
+                                </div>
+                            </div>
+                            <div class="text-xs text-textMuted mb-4 font-mono">2023 — Present</div>
+                            <ul class="text-xs text-textMuted space-y-2 font-light">
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">▶</span> Direct high-stakes event logistics, vendor management, and cross-functional operational rosters for large-scale events (including key execution support for the Bayelsa Food & Art Festival).</li>
+                                <li class="flex items-start gap-2"><span class="text-accent mt-0.5">▶</span> Manage executive scheduling, resource allocation, and real-time operational problem-solving.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                     <!-- Experience 3: DELSU -->
+                     <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-surface text-accent shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
+                            <i class="fas fa-graduation-cap text-sm"></i>
+                        </div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl border border-surfaceBorder bg-surface/50 hover:bg-surface transition-colors">
+                            <div class="flex flex-col mb-2">
+                                <h3 class="text-lg font-bold text-textMain">B.A. Candidate in History & Int'l Studies</h3>
+                                <div class="text-accent font-medium text-sm">Delta State University (DELSU)</div>
+                            </div>
+                            <div class="text-xs text-textMuted mb-4 font-mono">2021 — Present</div>
+                            <p class="text-xs text-textMuted font-light leading-relaxed">
+                                Leveraging historical methodology and international political economy studies to inform structured qualitative user research, global market analysis, and product strategy.
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-dark relative">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="reveal">
+                <span class="text-accent font-mono text-xs uppercase tracking-widest block mb-3">Initiate Collaboration</span>
+                <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-6">Let's Build Something Impactful.</h2>
+                <p class="text-base text-textMuted mb-12 font-light max-w-xl mx-auto">
+                    Open to Associate Product Manager (APM) opportunities, product consulting, or high-stakes event operations leadership.
+                </p>
+
+                <div class="bg-surface p-6 sm:p-10 rounded-2xl border border-surfaceBorder shadow-2xl text-left">
+                    <form onsubmit="event.preventDefault(); alert('Thank you! Your message draft has been logged.');">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label for="name" class="block text-xs font-semibold text-textMuted uppercase tracking-wider mb-2">Your Name</label>
+                                <input type="text" id="name" class="w-full bg-darker border border-surfaceBorder rounded-lg px-4 py-3 text-sm text-textMain focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors" placeholder="e.g. Sarah Jenkins" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-xs font-semibold text-textMuted uppercase tracking-wider mb-2">Email Address</label>
+                                <input type="email" id="email" class="w-full bg-darker border border-surfaceBorder rounded-lg px-4 py-3 text-sm text-textMain focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors" placeholder="sarah@company.com" required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-xs font-semibold text-textMuted uppercase tracking-wider mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full bg-darker border border-surfaceBorder rounded-lg px-4 py-3 text-sm text-textMain focus:outline-none focus:border-accent focus:ring-1 focus:ring-accent transition-colors resize-none" placeholder="Hi Enoch, we are looking for an APM to help us build..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full inline-flex justify-center items-center px-6 py-3.5 rounded-lg text-sm font-semibold text-white bg-accent hover:bg-accentHover transition-colors duration-200">
+                            Send Message <i class="fas fa-paper-plane ml-2 text-xs"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="mt-12 flex justify-center items-center gap-8">
+                    <a href="mailto:rennertalbot@gmail.com" class="text-textMuted hover:text-accent transition-colors flex items-center gap-2 text-sm">
+                        <i class="fas fa-envelope text-lg"></i>
+                        <span>Email</span>
+                    </a>
+                    <a href="[EDIT: LinkedIn Profile URL]" target="_blank" rel="noopener noreferrer" class="text-textMuted hover:text-accent transition-colors flex items-center gap-2 text-sm">
+                        <i class="fab fa-linkedin text-lg"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://x.com/Levitybytalbot" target="_blank" rel="noopener noreferrer" class="text-textMuted hover:text-accent transition-colors flex items-center gap-2 text-sm">
+                        <i class="fab fa-x-twitter text-lg"></i>
+                        <span>Twitter/X</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 text-center border-t border-surfaceBorder bg-darker">
+        <p class="text-xs text-textMuted font-light">
+            Enoch Renner Talbot &copy; <span id="year"></span>. Crafted for high-impact Product & Operations roles.
+        </p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        const icon = mobileBtn.querySelector('i');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            if(mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                navbar.classList.add('shadow-xl');
+            } else {
+                navbar.classList.remove('shadow-xl');
+            }
+        });
+
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 100;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal();
+    </script>
+</body>
+</html>
